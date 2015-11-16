@@ -24,7 +24,8 @@ class Bacterium(models.Model):
     notes = models.TextField(max_length=500)
 
     def __str__(self):
-        return ' '.join(self.genus, self.species)
+        name = str(self.genus + ' ' + self.species)
+        return (name)
 
 
 class Virus(models.Model):
