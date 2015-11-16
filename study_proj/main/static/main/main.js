@@ -1,41 +1,53 @@
 $(document).ready( function() {
   $('.form').hide();
+  //JQuery to show the form requested by the button
   $('#bac').click( function() {
+    $('.form').hide();
     $('#bac_form').show();
   });
   $('#vir').click( function() {
+    $('.form').hide();
     $('#vir_form').show();
   });
   $('#fun').click( function() {
+    $('.form').hide();
     $('#fun_form').show();
   });
   $('#par').click( function() {
+    $('.form').hide();
     $('#par_form').show();
   });
   $('#dis').click( function() {
+    $('.form').hide();
     $('#dis_form').show();
   });
   $('#dru').click( function() {
+    $('.form').hide();
     $('#dru_form').show();
   });
 
   $('#bac-submit').click( function(event) {
     event.preventDefault();
-    $.post(data)
+    console.log('submitted form')
   });
-  $('#vir').click( function() {
-    $('#vir_form').show();
+  $('#vir-submit').click( function(event) {
+    event.preventDefault();
+    console.log('submitted form')
   });
-  $('#fun').click( function() {
-    $('#fun_form').show();
+  $('#fun-submit').click( function(event) {
+    event.preventDefault();
+    console.log('submitted form')
   });
-  $('#par').click( function() {
-    $('#par_form').show();
+  $('#par-submit').click( function(event) {
+    event.preventDefault();
+    console.log('submitted form')
   });
-  $('#dis').click( function() {
-    $('#dis_form').show();
+  $('#dis-submit').click( function(event) {
+    event.preventDefault();
+    console.log('submitted form')
   });
-  $('#dru').click( function() {
-    $('#dru_form').show();
+  $('#dru-submit').click( function(event) {
+    event.preventDefault();
+    console.log('submitted form')
   });
 })
