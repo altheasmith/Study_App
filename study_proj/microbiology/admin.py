@@ -1,3 +1,4 @@
 from django.contrib import admin
+from microbiology.models import Bacterium
 
-# Register your models here.
+admin.site.register(Bacterium)
