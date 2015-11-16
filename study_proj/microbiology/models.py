@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Bacterium(models.Model):
     SHAPE_CHOICES = (
         ('COCCUS', "Spherical"),
@@ -25,11 +26,16 @@ class Bacterium(models.Model):
     def __str__(self):
         return ' '.join(self.genus, self.species)
 
+
 class Virus(models.Model):
     name = models.CharField(max_length=50)
     clinical_presentation = models.TextField(max_length=500)
     treatment = models.TextField(max_length=300)
     notes = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.name
+
 
 class Fungus(models.Model):
     name = models.CharField(max_length=50)
@@ -37,8 +43,15 @@ class Fungus(models.Model):
     treatment = models.TextField(max_length=300)
     notes = models.TextField(max_length=500)
 
+    def __str__(self):
+        return self.name
+
+
 class Parasite(models.Model):
     name = models.CharField(max_length=50)
     clinical_presentation = models.TextField(max_length=500)
     treatment = models.TextField(max_length=300)
     notes = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.name
