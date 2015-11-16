@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Javascript, JQuery, Bootstrap Links -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="{% static 'main/main.js' %}" defer></script>
-    <meta charset="utf-8">
-    <title>Study for Med School!</title>
-  </head>
-  <body>
-    <header>
-      <div class='container' id='header'>
-      <h1 class="page-header text-center">Study For Med School</h1>
-        <nav class="navbar navbar-static-top" style='background-color:lightgrey'>
-          <ul class="nav nav-pills navbar-right" style='background-color:lightgrey'>
-            <!-- change to custom CSS -->
-            <li><button class="btn btn-default" style='margin-left:2px' id="microbiology">Microbiology</button></li>
-            <li><button class="btn btn-default" style='margin-left:2px' id="pathology">Pathology</button></li>
-            <li><button class="btn btn-default" style='margin-left:2px' id="pharmacology">Pharmacology</button></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class='container'>
-      <div class='panel panel-default col-md-10'  style='background-color:green; height:20em; color:black; font-size:12pt'>
-        <p class='text-center' id='flash_card'>
-          Flashcards
-        </p>
-      </div>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<p> hello </p>
+{% endblock %}'
