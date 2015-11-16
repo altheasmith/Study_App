@@ -1,3 +1,5 @@
 from django.contrib import admin
+from pharmacology.models import Drug
 
-# Register your models here.
+
+admin.site.register(Drug)

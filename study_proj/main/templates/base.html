@@ -1,61 +1,47 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Javascript, JQuery, Bootstrap Links -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" defer integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="{% static 'main/main.js' %}" defer></script>
-    <meta charset="utf-8">
-    <title>Study for Med School!</title>
-  </head>
-  <body style='background-color:#117B8F'>
-    <div class='container body'>
-      <header>
-        <div class='container' id='header'>
-          <h1 class="page-header text-center" style='color:#B6E0E8'><b>Study for Year Two</b></h1>
-          <nav class="navbar" style='background-color:#025565; border-radius:1em'>
-            <ul class="nav nav-pills">
-              <!-- change to custom CSS -->
-              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="microbiology">Microbiology</button></li>
-              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="pathology">Pathology</button></li>
-              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="pharmacology">Pharmacology</button></li>
-              <li class="dropdown">
-                <button class="btn btn-default navbar-btn dropdown-toggle" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="AddDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Add Card
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="AddDropdown">
-                  <li><b>Microbiology</b></li>
-                  <li><a href='/main/add_bac'>Add Bacterium</a></li>
-                  <li><a href='/main/add_vir'>Add Virus</a></li>
-                  <li><a href='/main/add_fun'>Add Fungus</a></li>
-                  <li><a href='/main/add_par'>Add Parasite</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><b>Pathology</b></li>
-                  <li><a href='/main/add_dis'>Add Disease</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><b>Pharmacology</b></li>
-                  <li><a href='/main/add_dru'>Add Drug</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <div class='container'>
-        <div class='panel col-md-12'  style='background-color:#002D36; font-size:11pt; color:#B6E0E8; border-radius:1em'>
-          <div class='panel-heading'>
-            <div class='panel-body' id='flash_card'>
-              {% block content %}
-              {% endblock %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+
+              <table class='table-bordered'>
+                <tbody style='padding:2em'>
+                  <tr>
+                    <td class='info'><b>Genus: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.genus }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Species: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.species }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Shape: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.get_shape_display }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Aerobic: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.get_aerobic_display }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Clinical Presentation: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.clinical_presentation }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Treatment: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.treatment }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class='info'><b>Notes: </b>
+                    </td>
+                    <td class='answer'>{{ bacterium.notes }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
