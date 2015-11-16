@@ -2,5 +2,50 @@
 {% load staticfiles %}
 
 {% block content %}
-<p> hello </p>
-{% endblock %}'
+<table class='table-bordered'>
+  <tbody style='padding:2em'>
+    <tr>
+      <td class='info'><b>Genus: </b>
+      </td>
+      <td class='answer'>{{ bacterium.genus }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Species: </b>
+      </td>
+      <td class='answer'>{{ bacterium.species }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Shape: </b>
+      </td>
+      <td class='answer'>{{ bacterium.get_shape_display }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Aerobic: </b>
+      </td>
+      <td class='answer'>{{ bacterium.get_aerobic_display }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Clinical Presentation: </b>
+      </td>
+      <td class='answer'>{{ bacterium.clinical_presentation }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Treatment: </b>
+      </td>
+      <td class='answer'>{{ bacterium.treatment }}
+      </td>
+    </tr>
+    <tr>
+      <td class='info'><b>Notes: </b>
+      </td>
+      <td class='answer'>{{ bacterium.notes }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

@@ -3,6 +3,7 @@ from django.db import models
 
 class Bacterium(models.Model):
     SHAPE_CHOICES = (
+        (None, "Select the Bacterium's Shape"),
         ('COCCUS', "Spherical"),
         ('BACILLUS', "Rod-shaped"),
         ('SPIRAL', "Spiral"),
@@ -12,6 +13,7 @@ class Bacterium(models.Model):
         ('PLEOMORPHIC', "Pleomorphic")
     )
     AEROBIC_CHOICES=(
+        (None, "Aerobic or Anaerobic"),
         ('AEROBIC', "Aerobic"),
         ('ANAEROBIC', "Anaerobic")
     )

@@ -12,27 +12,49 @@
     <meta charset="utf-8">
     <title>Study for Med School!</title>
   </head>
-  <body>
-    <header>
-      <div class='container' id='header'>
-      <h1 class="page-header text-center">Study for Year Two</h1>
-        <nav class="navbar navbar-static-top" style='background-color:lightgrey'>
-          <ul class="nav nav-pills navbar-right" style='background-color:lightgrey'>
-            <!-- change to custom CSS -->
-            <li><button class="btn btn-default" style='margin-left:2px' id="microbiology">Microbiology</button></li>
-            <li><button class="btn btn-default" style='margin-left:2px' id="pathology">Pathology</button></li>
-            <li><button class="btn btn-default" style='margin-left:2px' id="pharmacology">Pharmacology</button></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class='container'>
-      <div class='panel panel-default col-md-10'  style='background-color:green; height:20em; color:black; font-size:12pt'>
-        <p class='text-center' id='flash_card'>
-          {% block content %}
-          {% endblock %}
-          Flashcards
-        </p>
+  <body style='background-color:#117B8F'>
+    <div class='container body'>
+      <header>
+        <div class='container' id='header'>
+          <h1 class="page-header text-center" style='color:#B6E0E8'><b>Study for Year Two</b></h1>
+          <nav class="navbar" style='background-color:#025565; border-radius:1em'>
+            <ul class="nav nav-pills">
+              <!-- change to custom CSS -->
+              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="microbiology">Microbiology</button></li>
+              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="pathology">Pathology</button></li>
+              <li><button class="btn btn-default navbar-btn" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="pharmacology">Pharmacology</button></li>
+              <li class="dropdown">
+                <button class="btn btn-default navbar-btn dropdown-toggle" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="AddDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Add Card
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="AddDropdown">
+                  <li><b>Microbiology</b></li>
+                  <li><a href='/main/add_bac'>Add Bacterium</a></li>
+                  <li><a href='/main/add_vir'>Add Virus</a></li>
+                  <li><a href='/main/add_fun'>Add Fungus</a></li>
+                  <li><a href='/main/add_par'>Add Parasite</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><b>Pathology</b></li>
+                  <li><a href='/main/add_dis'>Add Disease</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><b>Pharmacology</b></li>
+                  <li><a href='/main/add_dru'>Add Drug</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class='container'>
+        <div class='panel col-md-12'  style='background-color:#002D36; font-size:11pt; color:#B6E0E8; border-radius:1em'>
+          <div class='panel-heading'>
+            <div class='panel-body' id='flash_card'>
+              {% block content %}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
