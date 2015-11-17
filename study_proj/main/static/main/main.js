@@ -25,7 +25,7 @@ $(document).ready( function() {
     $('.form').hide();
     $('#dru_form').show();
   });
-
+  //JQuery for when form is submitted
   $('#bac-submit').click( function(event) {
     event.preventDefault();
     console.log('submitted form')

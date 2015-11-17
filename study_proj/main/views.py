@@ -15,7 +15,7 @@ class MainView(View):
         bacterium = Bacterium.objects.get(id=1)
         context = {
                 'bacterium':bacterium,
-                'bac_form':BacteriumForm().as_table(),
+                'bac_form':BacteriumForm(),
                 'vir_form':VirusForm().as_table(),
                 'fun_form':FungusForm().as_table(),
                 'par_form':ParasiteForm().as_table(),
