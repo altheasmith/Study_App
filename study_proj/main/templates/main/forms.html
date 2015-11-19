@@ -1,0 +1,63 @@
+<!-- dropdown -->
+
+<li class="dropdown">
+  <button class="btn btn-default navbar-btn dropdown-toggle" style='margin-left:1em; color:#002D36; background-color:#B6E0E8' id="AddDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Add Card
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="AddDropdown">
+    <li class='dropdown-header'><b>Microbiology</b></li>
+    <li class='btn btn-default' id='bac'>Add Bacterium</li>
+    <li class='btn btn-default' id='vir'>Add Virus</li>
+    <li class='btn btn-default' id='fun'>Add Fungus</li>
+    <li class='btn btn-default' id='par'>Add Parasite</li>
+    <li role="separator" class="divider"></li>
+    <li class='dropdown-header'><b>Pathology</b></li>
+    <li class='btn btn-default' id='dis'>Add Disease</li>
+    <li role="separator" class="divider"></li>
+    <li class='dropdown-header'><b>Pharmacology</b></li>
+    <li class='btn btn-default' id='dru'>Add Drug</li>
+  </ul>
+</li>
+
+
+<!-- forms -->
+
+<div class='form form-inline form-control' id='bac_form'>
+  <form class='form-control' method='POST'>
+    <div class='form-control'>
+      {{ bac_form }}
+    </div>
+    <button class='btn btn-default form-control' style='color:#002D36; background-color:#B6E0E8' id='bac-submit'>Submit</button>
+  </form>
+</div>
+<div class='form' id='vir_form'>
+  <form method='POST'>
+    {{ vir_form}}
+    <button class='btn btn-default' style='color:#002D36; background-color:#B6E0E8' id='vir-submit'>Submit</button>
+  </form>
+</div>
+<div class='form' id='fun_form'>
+  <form method='POST'>
+    {{ fun_form}}
+    <button class='btn btn-default' style='color:#002D36; background-color:#B6E0E8' id='fun-submit'>Submit</button>
+  </form>
+</div>
+<div class='form' id='par_form'>
+  <form method='POST'>
+    {{ par_form}}
+    <button class='btn btn-default' style='color:#002D36; background-color:#B6E0E8' id='par-submit'>Submit</button>
+  </form>
+</div>
+<div class='form' id='dis_form'>
+  <form method='POST'>
+    {{ dis_form}}
+    <button class='btn btn-default' style='color:#002D36; background-color:#B6E0E8' id='dis-submit'>Submit</button>
+  </form>
+</div>
+<div class='form' id='dru_form'>
+  <form method='POST'>
+    {{ dru_form}}
+    <button class='btn btn-default' style='color:#002D36; background-color:#B6E0E8' id='dru-submit'>Submit</button>
+  </form>
+</div>

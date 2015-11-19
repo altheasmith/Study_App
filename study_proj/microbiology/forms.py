@@ -5,19 +5,19 @@ from microbiology.models import Bacterium, Virus, Fungus, Parasite
 class BacteriumForm(ModelForm):
     class Meta:
         model = Bacterium
-        fields = ['genus','species','shape','aerobic','clinical_presentation','treatment','notes']
+        fields = ['genus','species','shape','aerobic','other_lab_findings','clinical_presentation','treatment','notes']
 
 
 class VirusForm(ModelForm):
     class Meta:
         model = Virus
-        fields = ['name','clinical_presentation','treatment','notes']
+        fields = ['category','name','clinical_presentation','treatment','notes']
 
 
 class FungusForm(ModelForm):
     class Meta:
         model = Fungus
-        fields = ['name','clinical_presentation','treatment','notes']
+        fields = ['genus','species','clinical_presentation','treatment','notes']
 
 
 class ParasiteForm(ModelForm):

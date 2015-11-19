@@ -8,33 +8,37 @@ from django.http import JsonResponse, HttpResponse
 from microbiology.forms import BacteriumForm, VirusForm, FungusForm, ParasiteForm
 from pathology.forms import DiseaseForm
 from pharmacology.forms import DrugForm
+import random
 
+
+len_dict = {
+            'patho':len(Disease.objects.all()),
+            'pharm':len(Drug.objects.all()),
+            'bac':len(Bacterium.objects.all()),
+            'vir':len(Virus.objects.all()),
+            'fun':len(Fungus.objects.all()),
+            'par':len(Parasite.objects.all())
+            }
+
+object_dict = {
+            'patho':Disease,
+            'pharm':Drug,
+            'bac':Bacterium,
+            'vir':Virus,
+            'fun':Fungus,
+            'par':Parasite
+            }
 
 class MainView(View):
     def get(self, request):
-        bacterium = Bacterium.objects.get(id=1)
-        context = {
-                'bacterium':bacterium,
-                'bac_form':BacteriumForm(),
-                'vir_form':VirusForm().as_table(),
-                'fun_form':FungusForm().as_table(),
-                'par_form':ParasiteForm().as_table(),
-                'dis_form':DiseaseForm().as_table(),
-                'dru_form':DrugForm().as_table(),
-        }
-        return render(request,'main/index.html', context)
+        return render(request,'main/index.html')
 
-class AddView(View):
+class GetCard(View):
     def get(self, request, card_type):
-        print(card_type)
-        card_type_dict = {
-            'bac':BacteriumForm().as_p(),
-            'vir':VirusForm().as_p(),
-            'fun':FungusForm().as_p(),
-            'par':ParasiteForm().as_p(),
-            'dis':DiseaseForm().as_p(),
-            'dru':DrugForm().as_p()
-            }
-        form = card_type_dict[card_type]
-        print(form)
-        return JsonResponse({'form':form})
+        if card_type == 'micro':
+            card_type_dict = {1:'bac', 2:'vir', 3:'fun', 4:'par'}
+            card_type = card_type_dict[random.randint(1,4)]
+        card_id = random.randint(1,len_dict[card_type])
+        card = object_dict[card_type].objects.get(id=card_id)
+        card = model_to_dict(card)
+        return JsonResponse({'card':card})

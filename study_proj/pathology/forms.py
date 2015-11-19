@@ -5,4 +5,4 @@ from pathology.models import Disease
 class DiseaseForm(ModelForm):
     class Meta:
         model = Disease
-        fields = ['name','clinical_presentation','treatment','notes']
+        fields = ['name','clinical_presentation','organ_system','treatment','notes']
