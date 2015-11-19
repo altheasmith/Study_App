@@ -38,6 +38,8 @@ class GetCard(View):
         if card_type == 'micro':
             card_type_dict = {1:'bac', 2:'vir', 3:'fun', 4:'par'}
             card_type = card_type_dict[random.randint(1,4)]
+        if len_dict[card_type] == 0:
+            return JsonResponse({'card':'0'})
         card_id = random.randint(1,len_dict[card_type])
         card = object_dict[card_type].objects.get(id=card_id)
         card = model_to_dict(card)
