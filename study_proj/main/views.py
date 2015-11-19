@@ -42,5 +42,10 @@ class GetCard(View):
             return JsonResponse({'card':'0'})
         card_id = random.randint(1,len_dict[card_type])
         card = object_dict[card_type].objects.get(id=card_id)
-        card = model_to_dict(card)
-        return JsonResponse({'card':card})
+        card_dict = model_to_dict(card)
+        if 'aerobic' in card_dict:
+            card_dict['aerobic'] = card.get_aerobic_display()
+        if 'shape' in card_dict:
+            card_dict['shape'] = card.get_shape_display()
+        card_dict['type'] = type(card).__name__
+        return JsonResponse({'card':card_dict})

@@ -1,6 +1,7 @@
 $(document).ready( function() {
   $('.get-card').click( function() {
     $.get('/main/' + this.id, function(data) {
+      console.log(data.card)
       if (data.card === '0') {
         $('#panel').html(
           '<p>There are no cards in this deck yet.</p>'
