@@ -1,18 +1,29 @@
 $(document).ready( function() {
+  $('.field').hide();
+  $('.answer').hide();
+  $('.flash-card').hide();
   $('.get-card').click( function() {
     $.get('/main/' + this.id, function(data) {
-      console.log(data.card)
+      var card = data.card
       if (data.card === '0') {
-        $('#panel').html(
+        $('#type').empty();
+        $('.field').hide();
+        $('.answer').hide();
+        $('.flash-card').hide();
+        $('#panel-text').html(
           '<p>There are no cards in this deck yet.</p>'
         );
       }
       else {
-        $('#flash_card').empty()
-        for (key in data.card) {
-          $('#flash_card').append(
-            '<tr class="click"><td>' + key + '</td><td>' + data.card[key] + '</td></tr>'
-          );
+        $('#type').empty();
+        $('.field').hide();
+        $('.answer').hide();
+        $('#panel-text').empty();
+        $('.flash-card').show();
+        console.log(card)
+        for (key in card) {
+          $('#' + key).html(card[key]);
+          $('.' + key).show();
         }
       }
     });

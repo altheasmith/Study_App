@@ -1,72 +1,78 @@
-class Bacterium(models.Model):
-    SHAPE_CHOICES = (
-        (None, "Select the Bacterium's Shape"),
-        ('COCCUS', "Coccus"),
-        ('BACILLUS', "Bacillus"),
-        ('SPIRAL', "Spiral"),
-        ('FILAMENTOUS', "Filamentous"),
-        ('CURVED', "Curved"),
-        ('PLEOMORPHIC', "Pleomorphic")
-    )
-    AEROBIC_CHOICES=(
-        (None, "Aerobic or Anaerobic"),
-        ('AEROBIC', "Aerobic"),
-        ('ANAEROBIC', "Anaerobic")
-    )
-    genus = models.CharField(max_length=50)
-    species = models.CharField(max_length=50)
-    shape = models.CharField(max_length=50, choices=SHAPE_CHOICES)
-    aerobic = models.CharField(max_length=50, choices=AEROBIC_CHOICES)
-    other_lab_findings = models.TextField(max_length=500)
-    clinical_presentation = models.TextField(max_length=500)
-    treatment = models.TextField(max_length=300)
-    notes = models.TextField(max_length=500)
 
-    def __str__(self):
-        name = str(self.genus + ' ' + self.species)
-        return (name)
-
-
-class Virus(models.Model):
-    category = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
-    clinical_presentation = models.TextField(max_length=500)
-    treatment = models.TextField(max_length=300)
-    notes = models.TextField(max_length=500)
-
-    def __str__(self):
-        return self.name
-
-
-class Fungus(models.Model):
-    genus = models.CharField(max_length=50)
-    species = models.CharField(max_length=50)
-    clinical_presentation = models.TextField(max_length=500)
-    treatment = models.TextField(max_length=300)
-    notes = models.TextField(max_length=500)
-
-    def __str__(self):
-        name = str(self.genus + ' ' + self.species)
-        return (name)
-
-
-
-class Parasite(models.Model):
-    name = models.CharField(max_length=50)
-    clinical_presentation = models.TextField(max_length=500)
-    treatment = models.TextField(max_length=300)
-    notes = models.TextField(max_length=500)
-
-Disease
+genus = models.CharField(max_length=50)
+species = models.CharField(max_length=50)
 name = models.CharField(max_length=50)
-  clinical_presentation = models.TextField(max_length=500)
-  organ_system = models.CharField(max_length=50)
-  treatment = models.TextField(max_length=300)
-  notes = models.TextField(max_length=500)
+shape = models.CharField(max_length=50, choices=SHAPE_CHOICES)
+aerobic = models.CharField(max_length=50, choices=AEROBIC_CHOICES)
+other_lab_findings = models.TextField(max_length=500)
+clinical_presentation = models.TextField(max_length=500)
+category = models.CharField(max_length=50)
+organ_system = models.CharField(max_length=50)
+spectrum = models.TextField(max_length=100)
+clinical_uses = models.TextField(max_length=300)
+side_effects = models.TextField(max_length=300)
+treatment = models.TextField(max_length=300)
+notes = models.TextField(max_length=500)
+card_number (id)
 
-class Drug(models.Model):
-    name = models.CharField(max_length=50)
-    spectrum = models.TextField(max_length=100)
-    clinical_uses = models.TextField(max_length=300)
-    side_effects = models.TextField(max_length=300)
-    notes = models.TextField(max_length=500)
+
+<td class='field' id='genus-f'><b>Genus: </b></td>
+<td class='answer' id= 'genus-a'></td>
+
+<td class='field' id='species-f'><b>Species: </b></td>
+<td class='answer' id= 'species-a'></td>
+
+<td class='field' id='name-f'><b>Name: </b></td>
+<td class='answer' id= 'name-a'></td>
+
+<td class='field' id='shape-f'><b>Shape: </b></td>
+<td class='answer' id= 'shape-a'></td>
+
+<td class='field' id='aerobic-f'><b>Aerobic: </b></td>
+<td class='answer' id= 'aerobic-a'></td>
+
+<td class='field' id='other-lab-f'><b>Other Lab Findings: </b></td>
+<td class='answer' id= 'other-lab-a'></td>
+
+<td class='field' id='clinical-presentation-f'><b>Clinical Presentation: </b></td>
+<td class='answer' id= 'clinical-presentation-a'></td>
+
+<td class='field' id='category-f'><b>Category: </b></td>
+<td class='answer' id= 'category-a'></td>
+
+<td class='field' id='organ-system-f'><b>Organ System: </b></td>
+<td class='answer' id= 'organ-system-a'></td>
+
+<td class='field' id='spectrum-f'><b>Spectrum: </b></td>
+<td class='answer' id= 'spectrum-a'></td>
+
+<td class='field' id='clinical-uses-f'><b>Clinical Uses: </b></td>
+<td class='answer' id= 'clinical-uses-a'></td>
+
+<td class='field' id='side-effects-f'><b>Side Effects: </b></td>
+<td class='answer' id= 'side-effects-a'></td>
+
+<td class='field' id='treatment-f'><b>Treatment: </b></td>
+<td class='answer' id= 'treatment-a'></td>
+
+<td class='field' id='notes-f'><b>Notes: </b></td>
+<td class='answer' id= 'notes-a'></td>
+
+<td class='field' id='card-number-f'><b>Card Number: </b></td>
+<td class='answer' id= 'card-number-a'></td>
+
+genus
+species
+name
+shape
+aerobic
+other_lab_findings
+clinical_presentation
+category
+organ_system
+spectrum
+clinical_uses
+side_effects
+treatment
+notes
+id)

@@ -3,7 +3,7 @@
 <html>
   <head>
     <!-- Javascript, JQuery, Bootstrap Links -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
@@ -30,8 +30,73 @@
       <div class='container'>
         <div class='panel col-md-12'  style='background-color:#002D36; font-size:11pt; color:#B6E0E8; border-radius:1em'>
           <div class='panel-heading'>
-            <div class='panel-body' id='panel'>
-              <table class='table table-bordered table-hover' id='flash_card'></table>
+            <div class='panel-body'>
+              <div id='panel-text'></div>
+              <table class='table table-bordered table-hover flash-card' id='card-table'>
+                <th class='type flash-card' colspan='2' id='type'></th>
+                <tbody class='flash-card' style='padding:2em' id='flash-card'>
+                  <tr>
+                    <td class='field genus'><b>Genus: </b></td>
+                    <td class='answer genus' id='genus'></td>
+                  </tr>
+                  <tr>
+                    <td class='field species'><b>Species: </b></td>
+                    <td class='answer species' id='species'></td>
+                  </tr>
+                  <tr>
+                    <td class='field name'><b>Name: </b></td>
+                    <td class='answer name' id='name'></td>
+                  </tr>
+                  <tr>
+                    <td class='field shape'><b>Shape: </b></td>
+                    <td class='answer shape' id='shape'></td>
+                  </tr>
+                  <tr>
+                    <td class='field aerobic'><b>Aerobic: </b></td>
+                    <td class='answer aerobic' id='aerobic'></td>
+                  </tr>
+                  <tr>
+                    <td class='field other_lab_findings'><b>Other Lab Findings: </b></td>
+                    <td class='answer other_lab_findings' id='other_lab_findings'></td>
+                  </tr>
+                  <tr>
+                    <td class='field clinical_presentation'><b>Clinical Presentation: </b></td>
+                    <td class='answer clinical_presentation' id='clinical_presentation'></td>
+                  </tr>
+                  <tr>
+                    <td class='field category'><b>Category: </b></td>
+                    <td class='answer category' id='category'></td>
+                  </tr>
+                  <tr>
+                    <td class='field organ_system'><b>Organ System: </b></td>
+                    <td class='answer organ_system' id='organ_system'></td>
+                  </tr>
+                  <tr>
+                    <td class='field spectrum'><b>Spectrum: </b></td>
+                    <td class='answer spectrum' id='spectrum'></td>
+                  </tr>
+                  <tr>
+                    <td class='field clinical_uses'><b>Clinical Uses: </b></td>
+                    <td class='answer clinical_uses' id='clinical_uses'></td>
+                  </tr>
+                  <tr>
+                    <td class='field side_effects'><b>Side Effects: </b></td>
+                    <td class='answer side_effects' id='side_effects'></td>
+                  </tr>
+                  <tr>
+                    <td class='field treatment'><b>Treatment: </b></td>
+                    <td class='answer treatment' id='treatment'></td>
+                  </tr>
+                  <tr>
+                    <td class='field notes'><b>Notes: </b></td>
+                    <td class='answer notes' id='notes'></td>
+                  </tr>
+                  <tr>
+                    <td class='field id'><b>Card Number: </b></td>
+                    <td class='answer id' id='id'></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
