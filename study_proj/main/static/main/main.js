@@ -5,6 +5,7 @@ $(document).ready( function() {
   $('.get-card').click( function() {
     $.get('/main/' + this.id, function(data) {
       var card = data.card
+      console.log(card)
       if (data.card === '0') {
         $('#type').empty();
         $('.field').hide();
