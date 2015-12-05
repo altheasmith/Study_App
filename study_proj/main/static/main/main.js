@@ -3,7 +3,7 @@ $(document).ready( function() {
   $('.answer').hide();
   $('.flash-card').hide();
   $('.get-card').click( function() {
-    $.get('/main/' + this.id, function(data) {
+    $.get(this.id, function(data) {
       var card = data.card
       console.log(card)
       if (data.card === '0') {
