@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from main.views import MainView
+from main.views import MainView, GetCard
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^microbiology/', include('microbiology.urls')),
-    url(r'^main/', include('main.urls')),
+    url(r'^$', MainView.as_view(), name='main'),
+    url(r'^(?P<card_type>[\w]{5})card$', GetCard.as_view(), name='getcard'),
 ]
