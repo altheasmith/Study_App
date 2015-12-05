@@ -5,7 +5,6 @@ $(document).ready( function() {
   $('.get-card').click( function() {
     $.get(this.id, function(data) {
       var card = data.card
-      console.log(card)
       if (data.card === '0') {
         $('#type').empty();
         $('.field').hide();
@@ -21,11 +20,16 @@ $(document).ready( function() {
         $('.answer').hide();
         $('#panel-text').empty();
         $('.flash-card').show();
-        console.log(card)
         for (key in card) {
           $('#' + key).html(card[key]);
           $('.' + key).show();
         }
+        $('.answer').hide();
+        $('#id').show();
+        $('.field').click( function() {
+          var class_list = $(this).attr('class').split(' ');
+          $('#' + class_list[1]).show();
+        });
       }
     });
   });

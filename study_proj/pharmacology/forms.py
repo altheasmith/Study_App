@@ -5,4 +5,4 @@ from pharmacology.models import Drug
 class DrugForm(ModelForm):
     class Meta:
         model = Drug
-        fields = ['name','spectrum','clinical_uses','side_effects','notes']
+        fields = ['class_name','name','mechanism','clinical_uses','side_effects','contraindications','notes']
